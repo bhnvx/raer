@@ -3,6 +3,8 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from middleware.middleware import TimeHeaderMiddleware
 
+from router.router import api
+
 
 app = FastAPI()
 app.add_middleware(
@@ -13,3 +15,4 @@ app.add_middleware(
     allow_headers=["*"],
 )
 app.add_middleware(TimeHeaderMiddleware)
+app.include_router(api)
