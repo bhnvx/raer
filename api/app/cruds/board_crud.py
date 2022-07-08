@@ -1,4 +1,4 @@
-from fastapi import Depends, HTTPException, APIRouter
+from fastapi import APIRouter, Query
 
 from manager.useData import get_events, load_json
 
@@ -6,8 +6,8 @@ from manager.useData import get_events, load_json
 router = APIRouter()
 
 
-@router.get('/')
-async def Home():
-    if get_events(1):
-        result = load_json(get_events(1))
+@router.get('')
+async def get_10notices(num: int = Query(...)):
+    if get_events(num):
+        result = load_json(get_events(num))
     return result

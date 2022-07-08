@@ -14,7 +14,7 @@ def _get_page(url: str) -> bs:
     return soup
 
 
-def events_of_get_content(num: int) -> List[str]:
+def events_of_get_contents(num: int) -> List[str]:
     url = _generate_url(num)
     page = _get_page(url)
     raw = page.find_all("span")
@@ -29,7 +29,7 @@ def events_of_get_content(num: int) -> List[str]:
 
 def create_events_dict(num: int) -> Dict:
     events = dict()
-    items = events_of_get_content(num)
+    items = events_of_get_contents(num)
 
     for i in range(len(items)):
         events[f"item{i}"] = items[i]
