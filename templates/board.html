@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" charset="UTF-8">
+    <title>TEST</title>
+    <link href="{{ url_for('static', path='/style.css') }}" rel="stylesheet">
+</head>
+<body>
+    <h1>
+        {% for k, v in items.items() %}
+        <tr>
+            <th> {{ k }} </th>
+
+            {% if v == "공지" %}
+            <td> None </td>
+            {% else %}
+            <td> {{ v }} </td>
+            {% endif %}
+            <br>
+        </tr>
+        {% endfor %}
+    </h1>
+</body>
+</html>
