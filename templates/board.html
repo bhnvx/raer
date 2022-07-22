@@ -14,8 +14,11 @@
             {% if v == "공지" %}
             <td> None </td>
             {% else %}
-            <td> {{ v }} </td>
+            <td>
+                <a href="{{ v.url }}"> {{ v.notice }} </a>
+            </td>
             {% endif %}
+
             <br>
         </tr>
         {% endfor %}
