@@ -9,8 +9,6 @@
     <h1>
         {% for k, v in items.items() %}
         <tr>
-            <th> {{ k }} </th>
-
             {% if v == "공지" %}
             <td> None </td>
             {% else %}
@@ -18,7 +16,6 @@
                 <a href="{{ v.url }}"> {{ v.notice }} </a>
             </td>
             {% endif %}
-
             <br>
         </tr>
         {% endfor %}
